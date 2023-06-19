@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+// import hero from "../Assets/hero.jpeg"
+// import hero from "../Assets/blogg.jpg"
 import hero from "../Assets/hero2.jpeg"
 import GlobalButton from '../Components/Static/GlobalButton'
 
@@ -7,9 +9,7 @@ const Hero = () => {
   return (
     <div>
         <Container>
-          <Back>
             <Wrapper>
-          <Wrap>
               <Title>
                 Get Your New Book With Best  Price Find Your Book Now
                 </Title>
@@ -17,15 +17,15 @@ const Hero = () => {
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunta sunt quaerat, eligendi ad, ipsum sit culpa porro fuga atque andersi delectus nostrum sapiente cupiditate.
                 </Desc>
                 <SearchBox>
-                    <InputHolder>
                     <Input placeholder='KeyWord'/>
-                    </InputHolder>
+                    <Dash></Dash>
                     <Select>
                         <option value="Category">Category</option>
                         <option value="Education">Education</option>
                         <option value="Fine Art">Fine Art</option>
                         <option value="History">History</option>
                     </Select>
+                    <Dash></Dash>
                     <Select>
                         <option value="Writer">Writer</option>
                         <option value="Dc Valerian">Dc Valerian</option>
@@ -34,11 +34,9 @@ const Hero = () => {
                     </Select>
                     <GlobalButton text='Search' bcc='#EA530D' width='100px' height='40px'/>
                 </SearchBox>
-                <Links>
-                </Links>
-              </Wrap>
+                {/* <Links>
+                </Links> */}
             </Wrapper>
-          </Back>
         </Container>
     </div>
   )
@@ -47,78 +45,87 @@ const Hero = () => {
 export default Hero
 
 const Select = styled.select`
-border-right: 1px solid black;
+/* border-right: 1px solid black; */
+width: 170px;
+height: 100%;
+border: none;
+outline: none;
+margin-left: 7px;
+font-size: 15px;
+margin-right: 7px;
 
+`
+const Dash = styled.div`
+  width: 2px;
+  height: 18px;
+  background-color: gray;
 `
 
 const Input = styled.input`
 outline: none;
 border: none;
+padding-left: 15px;
+
+::placeholder{
+  font-size: 15px;
+}
 `
 
-const InputHolder = styled.div`
-border-right: 1px solid black;
-`
 
 const Links = styled.div``
 
 const SearchBox = styled.div`
-/* background-color: red; */
-width: 100%;
-height: 50px;
-display: flex;
-align-items: center;
-justify-content:center;
-padding:10px 10px;
-border-radius: 5px;
+   width: 50%;
+    height: 65px;
+    border-radius: 10px;
+    background-color: #fff;
+    display: flex;
+    margin-top: 13px;
+    overflow: hidden;
+    align-items: center;
 `
 
 const Desc = styled.div`
 text-align: center;
-margin: 25px 0;
-font-size: 17px;
-color: white;
+margin-top: 35px;
+font-size: 20px;
+line-height: 30px;
+font-weight: 400;
+color: silver;
+width: 45%;
 `
 
 const Title = styled.div`
 font-weight: 700;
 font-size: 48px;
 text-align: center;
+width: 42%;
+margin: 0;
 color: white;
-`
-const Wrap =styled.div`
-margin-top: 70px;
-/* background-color: purple; */
-`
-const Back = styled.div`
-background-color: rgba(0,0,0,0.8);
-width: 100%;
-height: 100%;
-/* backdrop-filter: blur(2px); */
-display: flex;
-align-items: center;
-justify-content: center;
+line-height: 60px;
+
+
 `
 
+
 const Wrapper = styled.div`
-width: 50%;
+width: 100%;
 height: 100%;
 display: flex;
 flex-direction: column;
-/* justify-content: center; */
+justify-content: center;
 align-items: center;
+background-color: rgba(0,0,0,0.8);
+padding-bottom: 180px;
+padding-top: 180px;
 /* background-color: yellow; */
 `
 
 const Container = styled.div`
-/* background-color: orangered; */
 width: 100%;
-height: 600px;
 display: flex;
-align-items: center;
-justify-content: center;
 background-image: url(${hero});
 background-repeat: no-repeat;
-/* background-size: auto; */
-background-size:100% ;
+background-position: center;
+background-size:cover;
 `

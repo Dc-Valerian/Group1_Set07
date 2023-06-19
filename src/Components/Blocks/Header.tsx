@@ -5,7 +5,10 @@ import {GoSearch} from "react-icons/go"
 import {BsCart} from "react-icons/bs"
 import {FaAngleDown} from "react-icons/fa"
 import GlobalButton from '../Static/GlobalButton'
+
+
 const Header = () => {
+    const [show,setShow] = React.useState<boolean>(false)
   return (
     <div>
         <Container>
@@ -16,7 +19,8 @@ const Header = () => {
 <NavHolder>
     <Nav>Home</Nav>
     <Nav>About</Nav>
-    <Nav1>Books Store
+    <Nav1
+    >Books Store
         <Drop>
             <FaAngleDown/>
         </Drop>
@@ -25,12 +29,7 @@ const Header = () => {
     <Nav>Contact</Nav>
 </NavHolder>
 
-<HoverCard>
-    <Navs>All Books</Navs>
-    <Navs>Single Books</Navs>
-    <Navs> My Account</Navs>
-    <Navs>Checkout</Navs>
-</HoverCard>
+
 <IconHolder>
     <Icon>
         <GoSearch/>
@@ -41,6 +40,14 @@ const Header = () => {
    <GlobalButton bcc='#0275D8' width='130px' height='40px' text='Upload Button'/>
 </IconHolder>
 
+  {
+    show ? <HoverCard>
+    <Navs>All Books</Navs>
+    <Navs>Single Books</Navs>
+    <Navs> My Account</Navs>
+    <Navs>Checkout</Navs>
+</HoverCard> :null
+  }
 
        </Main>
         </Container>
@@ -56,13 +63,10 @@ cursor: pointer;
 `
 
 const HoverCard = styled.div`
-background-color: red;
-width: 150px;
-height:150px;
-font-size: 20px;
-display: none;
-
-margin-top: 200px;
+background-color: blue;
+position: absolute;
+top: 50px;
+right: 650px;
 `
 
 const Drop = styled.div`
@@ -74,7 +78,7 @@ padding-left: 2px;
 const Icon = styled.div`
 margin:0 10px;
 margin-right: 20px;
-color: blue;
+color: #025AA5;
 font-size: 20px;
 `
 
@@ -92,9 +96,6 @@ display: flex;
 align-items: center;
 justify-content: center;
 
- :hover ~ ${HoverCard} {
-    display: flex;
-  }
 `
 const Nav = styled.nav`
 margin: 20px;
@@ -105,6 +106,7 @@ const NavHolder = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
+position: relative;
 
 `
 
@@ -130,7 +132,7 @@ justify-content: space-between;
 `
 
 const Container = styled.div`
-background-color: grey;
+background-color: #FFFFFF;
 height: 70px;
 width: 100%;
 display: flex;
