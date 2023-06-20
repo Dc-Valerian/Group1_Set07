@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Layout from "../Components/Blocks/Layout";
 import HomeScreen from "../Pages/HomeScreen";
+import UploadBooks from "../Pages/UploadBooks";
 
 export const mainRoute = createBrowserRouter([
     {
@@ -9,6 +10,12 @@ export const mainRoute = createBrowserRouter([
         children:[{
             index:true,
             element:<HomeScreen/>
-        }]
+        },
+        {
+            path:"/uploads",
+            element:<UploadBooks/>
+        }
+    ]
+        
     }
 ])
